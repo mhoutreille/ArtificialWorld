@@ -27,12 +27,12 @@ public class Main {
 
 
 		
-		PhysiologicalNeed p = new PhysiologicalNeed();
+//		PhysiologicalNeed p = new PhysiologicalNeed();
+//		
+//		Double erf = p.ERF(1., 7);
 		
-		Double erf = p.ERF(1., 7);
 		
-		
-		/*SwingUtilities.invokeLater(new Runnable() {
+		SwingUtilities.invokeLater(new Runnable() {
             public void run() {
 		        UIManager.put("swing.boldMetal", Boolean.FALSE);
 		        createAndShowGUI();
@@ -45,7 +45,7 @@ public class Main {
 		
 		Human H1 = new Human("Mathieu", "Houtreille", "M");
 		Human H2 = new Human("Laura", "Lopez", "F");
-		*/
+		
 		
 		
 
