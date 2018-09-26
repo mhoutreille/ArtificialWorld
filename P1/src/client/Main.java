@@ -4,7 +4,6 @@ import javax.swing.UIManager;
 
 import gui.MainFrame;
 import object.entity.human.Human;
-import object.entity.human.needs.PhysiologicalNeed;
 import object.world.World;
 import utils.WorldProxy;
 

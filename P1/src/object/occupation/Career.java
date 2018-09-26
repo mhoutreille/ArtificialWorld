@@ -5,8 +5,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import object.world.World;
-
 public class Career extends Thread implements Serializable{
 
 	private String careerName = null;

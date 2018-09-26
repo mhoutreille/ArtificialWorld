@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,9 +15,10 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 import gui.tableModel.HumanTableModel;
+import object.entity.human.Human;
 import utils.HumanProxy;
 
-public class HumanPanel extends JPanel implements Runnable{
+public class HumanPanel extends JPanel implements Runnable, MouseListener {
 
 
 
@@ -74,9 +77,9 @@ public class HumanPanel extends JPanel implements Runnable{
         
         
         
-        
+        JPanel tablePanel = getTablePanel();
         add(mainInfoPanel, BorderLayout.NORTH);
-        add(getTablePanel(), BorderLayout.CENTER);
+        add(tablePanel, BorderLayout.CENTER);
         
         
         
@@ -91,6 +94,7 @@ public class HumanPanel extends JPanel implements Runnable{
 		tablePanel.setLayout(new GridLayout(1,0));
 		
 		final JTable table = new JTable(new HumanTableModel());
+		table.addMouseListener(this);
 		table.setPreferredScrollableViewportSize(new Dimension(500, 70));
 		table.setFillsViewportHeight(true);
 		
@@ -124,6 +128,39 @@ public class HumanPanel extends JPanel implements Runnable{
 			humanPopulationField.setText(HumanProxy.getList().size()+""); 
 			humanDeadPopulationField.setText(HumanProxy.getDeadList().size()+"");
 			humanAlivePopulationField.setText(HumanProxy.getAliveList().size()+"");
+		}
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		if(arg0.getSource() instanceof JTable)  {
+			int selectedRow = ((JTable)arg0.getSource()).getSelectedRow();
+			Human h = ((HumanTableModel)((JTable)arg0.getSource()).getModel()).getHumanAt(selectedRow);
 		}
 		
 	}

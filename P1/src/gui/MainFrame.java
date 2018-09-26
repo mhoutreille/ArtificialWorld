@@ -1,10 +1,7 @@
 package gui;
 
 import java.awt.BorderLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 
@@ -13,7 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
+
+import object.entity.human.needs.MaslowPyramid;
 
 public class MainFrame extends JFrame {
 
@@ -46,6 +44,12 @@ public class MainFrame extends JFrame {
         tabbedPane.addTab("Humans", null, panel2,
                 "Does twice as much nothing");
         tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
+
+        JComponent panel3 = new MaslowPyramidPanel(new MaslowPyramid());
+        tabbedPane.addTab("Maslow", null, panel3,
+                "Maslow Pyramid");
+        tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
+        
         
         add(tabbedPane);
         

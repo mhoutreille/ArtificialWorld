@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 
 import object.time.FixedWorkHours;
 import object.time.GlobalTimeParameters;
-
 import utils.WorldProxy;
 
 public class DefaultJob extends Job {

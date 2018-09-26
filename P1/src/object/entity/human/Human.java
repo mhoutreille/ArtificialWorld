@@ -2,6 +2,7 @@ package object.entity.human;
 
 import java.io.Serializable;
 
+import object.entity.human.needs.MaslowPyramid;
 import object.entity.human.process.Life;
 import object.occupation.Career;
 
@@ -17,8 +18,8 @@ public class Human implements Serializable {
 	
 	private HumanParameters parameters;
 	private Career career;
-	
 	private Life life;
+	private MaslowPyramid needsPyramid;
 	
 	
 	public Human() {
@@ -31,6 +32,7 @@ public class Human implements Serializable {
 		this.lastName = lastName;	
 		this.genre = genre;	
 		life = new Life(this);
+		needsPyramid = new MaslowPyramid();
 	}
 	
 	public Human getMother() {

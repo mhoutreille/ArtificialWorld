@@ -31,6 +31,9 @@ public class HumanTableModel extends DefaultTableModel {
     }
     
     
+    public Human getHumanAt(int row) {
+    	return HumanProxy.getList().get(row);
+    }
     
     public Object getValueAt(int row, int col) {
     	

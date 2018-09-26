@@ -5,9 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import object.entity.element.Food;
-import object.entity.element.Water;
-
 public class DefaultNeed implements Need {
 
 	Double level = 0.;
@@ -22,10 +19,10 @@ public class DefaultNeed implements Need {
 	
 	
 	@Override
-	public Double getNeedLevel(HumanNeedable pNeed) {
+	public Double getNeedLevel(String pNeed) {
 		
-		if(needsType.contains(pNeed.getClass())) {
-			return needsLevel.get(pNeed.getClass());
+		if(needsType.contains(pNeed)) {
+			return needsLevel.get(pNeed);
 		}
 		
 		return 0.;
@@ -100,6 +97,18 @@ public class DefaultNeed implements Need {
 		} else {
 			return n * factorial(n-1);
 		}
+	}
+
+
+
+	public List<Class> getNeedsType() {
+		return needsType;
+	}
+
+
+
+	public void setNeedsType(List<Class> needsType) {
+		this.needsType = needsType;
 	}
 
 }

@@ -2,9 +2,7 @@ package server;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import object.entity.human.Human;
